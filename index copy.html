@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses chart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="balance wrapper">
+            <div class="left">
+                <h2 class="balance-header header-secondary">My balance</h1>
+                <span class="balance-sum">$921.48</span>
+            </div>
+            <div class="right">
+                <div class="circle cirle-right"></div>
+                <div class="circle circle-left"></div>
+            </div>
+        </div>
+        <div class="spending wrapper">
+            <h1 class="spending-header">Spending - Last 7 days</h1>
+                <div id="chart">
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">mon</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">tue</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle highlighted"></div>
+                            <span class="chart-header">wed</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">thu</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">fri</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">sat</span>
+                        </div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-info">$52.36</div>
+                        <div class="chart-cell">
+                            <div class="chart-rectangle"></div>
+                            <span class="chart-header">sun</span>
+                        </div>
+                    </div>
+                </div>
+            <div class="divider"></div>
+            <div class="summary">
+                <div class="summary-left">
+                    <h2 class="summary-header header-secondary">Total this month</h1>
+                    <span class="summary-sum">$921.48</span>
+                </div>
+                <div class="summary-right">
+                    <span class="summary-grow">+2.4%</span>
+                    <h2 class="summary-header header-secondary">from last month</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
