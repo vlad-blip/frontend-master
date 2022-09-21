@@ -1,0 +1,77 @@
+@import url('styles.css');
+
+body {
+    background: linear-gradient( rgba(11, 13, 23, .5), rgba(11, 13, 23, .5) ), url('./assets/crew/background-crew-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.main {
+    margin-top: 8rem;
+    padding-bottom: 0;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    color: var(--white);
+}
+
+.picker-item input {
+    display: none;
+}
+
+.section-heading .highlight {
+    color: hsla(0, 0%, 100%, .25);
+}
+
+.section-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.crew-description {
+    margin-top: 13.7rem;
+}
+
+.heading-4 {
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 1.5rem;
+}
+
+.heading-3 {
+    white-space: nowrap;
+}
+
+.body-text {
+    line-height: 178%;
+    margin-top: 3rem;
+    margin-bottom: 12rem;
+    font-family: 'Barlow';
+    max-width: 44rem;
+}
+
+.slider {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.page {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.17;
+}
+
+.page:hover {
+    opacity: 0.5;
+}
+
+.page--active {
+    opacity: 1;
+}
