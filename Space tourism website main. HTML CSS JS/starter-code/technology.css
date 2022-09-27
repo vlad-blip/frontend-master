@@ -1,22 +1,55 @@
 @import url('./styles.css');
 
-@import url('styles.css');
-
 body {
-    background: linear-gradient( rgba(11, 13, 23, .5), rgba(11, 13, 23, .5) ), url('./assets/crew/background-crew-desktop.jpg');
+    background: linear-gradient( rgba(11, 13, 23, .5), rgba(11, 13, 23, .5) ), url('./assets/technology/background-technology-desktop.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: darken;
 }
 
 .main {
     margin-top: 8rem;
+    margin-right: 0;
     padding-bottom: 0;
 }
 
+@media (max-width:768px){
+    .main {
+        margin-left: 0;
+        margin-bottom: 10rem;
+    }
+}
+
+@media (max-width:375px){
+    .main {
+        margin-top: 2.4rem;
+        margin-bottom: 8rem;
+    }
+}
+
+@media (max-width:375px){
+    .burger-btn {
+        display: block;
+        position: relative;
+        z-index: 10;
+        width: 24px;
+        height: 21px;
+        margin-right: 2.7rem;
+        margin-top: 3.4rem;
+    }
+
+    .burger-icon {
+        width: 100%;
+        height: 100%;
+        background: url("./assets/shared/icon-hamburger.svg") no-repeat;
+    }
+
+    .burger-icon--close {
+        background: url('./assets/shared/icon-close.svg') no-repeat;
+    }
+}
+
 .hero {
-    display: flex;
-    align-items: flex-start;
+    display: block;
     color: var(--white);
 }
 
@@ -28,19 +61,49 @@ body {
     color: hsla(0, 0%, 100%, .25);
 }
 
+.section-heading {
+    margin-bottom: 2.6rem;
+}
+
+@media (max-width:768px){
+    .section-heading {
+        text-align: left;
+        margin-left: 40px;
+        margin-bottom: 6rem;
+    }
+}
+
+@media (max-width:375px){
+    .section-heading {
+        margin-left: 0;
+        margin-bottom: 3.2rem;
+        text-align: center;
+    }
+}
+
 .section-body {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
-.crew-description {
-    margin-top: 13.7rem;
+@media (max-width:768px){
+    .section-body {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
-.heading-4 {
-    color: rgba(255, 255, 255, .5);
-    margin-bottom: 1.5rem;
+.launch-wrapper .heading-5 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+@media (max-width:375px){
+    .launch-wrapper .heading-5{
+        font-size: 1.4rem;
+        letter-spacing: 2.3625px;
+    }
 }
 
 .heading-3 {
@@ -48,32 +111,104 @@ body {
 }
 
 .body-text {
-    line-height: 178%;
-    margin-top: 3rem;
-    margin-bottom: 12rem;
+    margin-top: 1.7rem;
     font-family: 'Barlow';
     max-width: 44rem;
 }
 
+@media (max-width:375px){
+    .body-text {
+        max-width: 32rem;
+    }
+}
+
+
 .slider {
     list-style: none;
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+    gap: 32px;
+}
+
+@media (max-width:768px){
+    .slider {
+        flex-direction: row;
+    }
+}
+
+@media (max-width:375px){
+    .slider {
+        gap: 16px;
+    }
+}
+
+.launch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+@media (max-width:768px){
+    .launch-wrapper {
+        flex-direction: column;
+        gap: 4.4rem;
+        margin-top: 5.6rem;
+    }
+}
+
+@media (max-width:375px){
+    .launch-wrapper {
+        margin-top: 3.4rem;
+        gap: 2.4rem;
+    }
+}
+
+@media (max-width:768px){
+    .vehicle-img {
+        display: block;
+        box-sizing: border-box;
+        width: 768px;
+        height: 310px;
+    }
+}
+
+@media (max-width:375px){
+    .vehicle-img {
+        width: 375px;
+        height: 170px;
+        background-size: cover;
+    }
 }
 
 .page {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background-color: var(--white);
-    opacity: 0.17;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background-color: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 3.2rem;
 }
 
-.page:hover {
-    opacity: 0.5;
+@media (max-width:375px){
+    .page {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+
 }
 
 .page--active {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.page:hover {
     opacity: 1;
+    border-color: rgba(255, 255, 255, 1);
 }
