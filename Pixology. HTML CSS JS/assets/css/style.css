@@ -2,62 +2,524 @@
   #style.css
 \*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
+:root {
+
+  /*-----------------------------------*\
+    #COLORS
+  \*-----------------------------------*/
+
+  --sky-blue-crayola: hsl(188, 64%, 60%);
+  --raisin-black_90: hsla(240, 8%, 12%, 0.9);
+  --raisin-black-1: hsl(240, 8%, 17%);
+  --raisin-black-2: hsl(240, 8%, 12%);
+  --majorelle-blue: hsl(241, 77%, 63%);
+  --blue-ryb_80: hsla(241, 88%, 60%, 0.8);
+  --bittersweet: hsl(0, 100%, 69%);
+  --eerie-black: hsl(0, 0%, 13%);
+  --ghost-white: hsl(230, 60%, 98%);
+  --light-gray: hsl(0, 0%, 80%);
+  --slate-gray: hsl(225, 8%, 48%);
+  --cool-gray: hsl(225, 11%, 59%);
+  --gainsboro: hsl(217, 16%, 90%);
+  --mustard: hsl(47, 100%, 69%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --onyx: hsl(240, 5%, 26%);
+  --jet: hsl(0, 0%, 21%);
 
 
+  --facebook: hsl(241, 77%, 63%);
+  --twitter: hsl(203, 89%, 53%);
+  --youtube: hsl(0, 100%, 50%);
+
+  --gradient: radial-gradient(ellipse at center, hsla(0, 0%, 0%, 0.25), transparent 80%);
+
+  --ff-dm-sans: 'DM Sans', sans-serif;
+
+  /*-----------------------------------*\
+    #TYPOGRAPHY
+  \*-----------------------------------*/
+
+  --fs-1: 4rem;
+  --fs-2: 3.5rem;
+  --fs-3: 2.4rem;
+  --fs-4: 2.2rem;
+  --fs-5: 2rem;
+  --fs-6: 1.8rem;
+  --fs-7: 1.7rem;
+  --fs-8: 1.5rem;
+  --fs-9: 1.4rem;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+  font-size: 62.5%;
+  /*-----------------------------------*\
+    #SHADOW
+  \*-----------------------------------*/
+
+  --shadow-1: 0px 2px 50px hsla(223, 40%, 76%, 0.3);
+  --shadow-2: 0px -2px 12px hsl(252, 29%, 93%);
+  --shadow-3: 0px 4px 4px hsla(231, 20%, 49%, 0.06);
+  --shadow-4: 0px 15px 30px hsla(210, 30%, 32%, 0.05);
+  --shadow-5: 0px 15px hsla(241, 62%, 34%, 0.04);
+
+  /*-----------------------------------*\
+    #BORDER RADIUS
+  \*-----------------------------------*/
+
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-15: 15px;
+  --radius-20: 20px;
+  
+  /*-----------------------------------*\
+    #TRANSITION
+  \*-----------------------------------*/
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+  /*-----------------------------------*\
+    #SPACING
+  \*-----------------------------------*/
+
+  --section-padding: 100px;
+  
+}
 
 
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
-
-
-
-
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
 
+.fs-1 {
+  font-size: var(--fs-1);
+}
+
+.fs-2 {
+  font-size: var(--fs-2);
+}
+
+.fs-3 {
+  font-size: var(--fs-3);
+}
+
+.fs-4 {
+  font-size: var(--fs-4);
+}
+
+.fs-5 {
+  font-size: var(--fs-5);
+}
+
+.fs-6 {
+  font-size: var(--fs-6);
+}
+
+.fs-7 {
+  font-size: var(--fs-7);
+}
+
+.fs-8 {
+  font-size: var(--fs-8);
+}
+
+.fs-9 {
+  font-size: var(--fs-9);
+}
+
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
 
 
+body {
+  font-family: var(--ff-dm-sans);
+  font-size: 1.6rem;
+  color: var(--slate-gray);
+  min-height: 100vh;
+}
 
+.container {
+  padding-inline: 1.5rem;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.main-heading {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-1);
+  color: var(--black);
+}
+
+.body-text {
+  line-height: 2.5rem;
+  font-size: var(--fs-7);
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  content:'';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  bottom: 12px;
+  width: 100%;
+  height: 6px;
+  background-color: var(--mustard);
+}
+
+img {
+  max-width: 100%;
+}
 
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
 
+.header.active {
+  background-color: var(--white);
+}
 
+.header {
+  padding-block: 1.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right:0;
+  z-index: 100;
+}
 
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.logo {
+  text-decoration: none;
+  font-size: 3.6rem;
+  font-weight: var(--fw-700);
+  color: var(--black);
+}
 
+.nav-wrapper {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  transform: translateX(100%);
+  min-width: 60vw;
+  min-height: 100vh;
+  background-color: var(--raisin-black-2);
+  color: var(--white);
+  padding-inline: 3rem;
+  transition: 0.25s var(--cubic-in);
+}
+
+.nav-wrapper.active {
+  visibility: visible;
+  transform: translateX(0);
+  transition: 0.5s var(--cubic-out);
+}
+
+.nav-wrapper .logo {
+  color: var(--white);
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7rem;
+  margin-top: 4rem;
+}
+
+.burger {
+  background-color: var(--white);
+  padding: 1rem;
+  border: 0;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-10);
+}
+
+.burger [name="menu-outline"]{
+  font-size: 3.5rem;
+}
+
+.burger-close {
+  display: flex;
+  background: none;
+  align-items: center;
+  border: 0;
+  color: var(--white);
+  font-size: 3rem;
+}
+
+.nav-list {
+  flex-direction: column;
+}
+
+.nav-list a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  color: var(--white);
+  padding-block: 2rem;
+  font-size: var(--fs-9);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+}
+
+.nav-list li + li > a{
+  border-top: 1px solid var(--slate-gray);
+}
 
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
 
+.hero {
+  margin-top: 10rem;
+  padding-bottom: 10rem;
+}
 
+.hero .body-text {
+  margin-block: 3rem;
+}
 
+:where(.btn-wrapper, .social-wrapper) a {
+  display: inline-block;
+  text-decoration: none;
+}
 
+.btn-wrapper, .social-wrapper {
+  display: flex;
+}
+
+.btn-wrapper {
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.social-wrapper {
+  gap: 1rem;
+}
+
+.social-wrapper a {
+  text-transform: uppercase;
+  color: var(--raisin-black-1);
+  font-weight: var(--fw-700);
+  display: flex;
+  font-size: 1.4rem;
+  align-items: center;
+  letter-spacing: .1em;
+  padding: 1.2rem;
+}
+
+.social-wrapper a span {
+  display: none;
+  margin-left: 1.2rem;
+}
+
+.social-wrapper [name] {
+  font-size: 2rem;
+  margin-block: 5rem;
+}
+
+.btn {
+  background-color: var(--majorelle-blue);
+  padding-inline: 5rem;
+  padding-block: 2rem;
+  border-radius: var(--radius-10);
+  font-weight: var(--fw-700);
+  color: var(--white);
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+.btn-secondary {
+  color: var(--raisin-black-1);
+  font-size: var(--fs-6);
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-500);
+}
+
+.btn-secondary [name] {
+  margin-right: 1.5rem;
+  font-size: 2rem;
+}
+
+.social {
+  padding: 1rem;
+  border-radius: var(--radius-10);
+}
+
+.social.facebook {
+  color: var(--facebook);
+}
+
+.social.facebook:hover, 
+.social.facebook:active {
+  background-color: var(--facebook);
+  color: var(--white);
+}
+
+.social.youtube {
+  color: var(--youtube);
+}
+
+.social.youtube:hover, 
+.social.youtube:active {
+  background-color: var(--youtube);
+  color: var(--white);
+}
+
+.social.twitter {
+  color: var(--twitter);
+}
+
+.social.twitter:hover, 
+.social.twitter:active {
+  background-color: var(--twitter);
+  color: var(--white);
+}
 
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
 
+.services {
+  text-align: center;
+  background-color: var(--ghost-white);
+  padding-top: 10rem;
+}
 
+.secondary-heading {
+  position: relative;
+  display: inline-block;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  margin-bottom: 4rem;
+}
 
+.secondary-heading::before {
+  content:'';
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: -20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--mustard);
+}
 
+.grid-list {
+  margin-top: 6rem;
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 4.5rem;
+  box-shadow: var(--shadow-3);
+  border-radius: var(--radius-20);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  border-bottom: 4px solid transparent;
+}
+
+.service-card:where(:hover, :focus) {
+  border-bottom-color: black;
+}
+
+.card-icon {
+  transition: transform .8s;
+}
+
+.service-card:where(:hover, :focus) .card-icon{
+  transform: rotateY(180deg);
+}
+
+.heading-2 {
+  font-size: var(--fs-3);
+  color: var(--black);
+  font-weight: var(--fw-500);
+}
+
+.card-icon {
+  background-color: var(--color, black);
+  padding: 1.5rem;
+  border-radius: var(--radius-10);
+}
 
 /*-----------------------------------*\
   #FEATURE
@@ -110,3 +572,9 @@
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+@media (min-width:768px){
+  .social-wrapper a span {
+    display: inline;
+  }
+}
