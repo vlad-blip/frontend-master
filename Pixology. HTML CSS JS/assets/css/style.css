@@ -157,11 +157,7 @@ body {
 .container {
   margin-inline: auto;
   padding-inline: 1.5rem;
-  width: clamp(34rem, 70vw, 110rem);
-}
-
-.btn {
-  cursor: pointer;
+  width: clamp(34rem, 90vw, 114rem);
 }
 
 .heading {
@@ -188,6 +184,7 @@ body {
 
 .highlight {
   position: relative;
+  z-index: 1;
 }
 
 .highlight::after {
@@ -196,6 +193,7 @@ body {
   position: absolute;
   z-index: -1;
   bottom: 12px;
+  right: 0;
   width: 100%;
   height: 6px;
   background-color: var(--mustard);
@@ -362,14 +360,52 @@ img {
 }
 
 .btn {
+  cursor: pointer;
   background-color: var(--majorelle-blue);
   padding-inline: 5rem;
   padding-block: 2rem;
+  text-decoration: none;
   border-radius: var(--radius-10);
   font-weight: var(--fw-700);
   color: var(--white);
   font-size: 1.6rem;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: 250ms;
+  z-index: 1;
+}
+
+.btn::after, .btn::before {
+  visibility: hidden;
+  display: block;
+  content:'';
+  position: absolute;
+  width: 100%;
+  right: 0;
+  height: 50%;
+  background-color: var(--mustard);
+  transition: 250ms;
+  z-index: -1;
+}
+
+.btn::after {
+  top: 0;
+  transform: translateX(100%);
+}
+
+.btn::before {
+  bottom: 0;
+  transform: translateX(-100%);
+}
+
+.btn:where(:hover, :focus)::after, .btn:where(:hover, :focus)::before {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.btn:where(:focus, :hover) {
+  color: var(--raisin-black-1);
 }
 
 .btn-secondary {
@@ -740,10 +776,15 @@ img {
   border-radius: var(--radius-10);
   border: 0;
   background-color: var(--majorelle-blue);
+  outline: 3px solid transparent;
 }
 
 .newsletter input::placeholder {
   color: var(--white);
+}
+
+.newsletter input:focus {
+  outline-color: var(--white);
 }
 
 .newsletter .btn {
@@ -756,9 +797,21 @@ img {
   gap: 1rem;
 }
 
+.newsletter .btn::before, .newsletter .btn::after {
+  background-color: var(--majorelle-blue);
+}
+
+.newsletter .btn:hover {
+  color: var(--white);
+}
+
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
+.blog {
+  background-color: var(--ghost-white);
+}
+
 
 .blog hgroup{
   text-align: center;
@@ -848,6 +901,22 @@ footer {
   color: var(--cool-gray);
 }
 
+footer .container.padding-block {
+  padding-block-end: 2rem;
+}
+
+.footer-top {
+  display: grid;
+  gap: 6rem;
+  padding-block-end: 6rem;
+  border-block-end: 1px solid var(--onyx);
+}
+
+.footer-down {
+  color: var(--white);
+  padding-block-start: 4rem;
+}
+
 footer h4 {
   color: var(--white);
   font-size: var(--fs-5);
@@ -859,11 +928,85 @@ footer p {
   line-height: 150%;
   margin-block-end: 2rem;
 }
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  padding: 1.5rem;
+  display: flex;
+  background-color: var(--onyx);
+  border-radius: 50%;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-block-start: 4rem;
+}
+
+.instagram-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+}
+
+.instagram-card {
+  position: relative;
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  height: 100%;
+}
+
+.card-content {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  background-color: var(--blue-ryb_80);
+  inset: 0;
+  font-size: 2.5rem;
+  color: var(--white);
+  transition: .5s;
+  opacity: 0;
+}
+
+.instagram-card:where(:hover, :focus) .card-content{
+  opacity: 1;
+}
+
+.link-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 /*-----------------------------------*\
   #BACK TO TOP
 \*-----------------------------------*/
 
-
+.bnt-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1rem;
+  background-color: var(--majorelle-blue);
+  color: var(--white);
+  border: 0;
+  text-decoration: none;
+}
 
 
 
@@ -874,9 +1017,26 @@ footer p {
   .social-wrapper a span {
     display: inline;
   }
+
+  .social {
+    box-shadow: none;
+  }
+
   .service-card .heading-2 {
     font-size: 2rem;
     font-weight: 400;
+  }
+
+  .newsletter form {
+    position: relative;
+  }
+
+  .newsletter .btn {
+    position: absolute;
+    inset: 0;
+    left: auto;
+    margin: 0.5rem;
+    padding-inline: 3rem;
   }
 }
 
@@ -888,6 +1048,113 @@ footer p {
   .heading-2 {
     font-size: 4.5rem;
   }
+  
+  .main-heading {
+    font-size: 5.5rem;
+  }
+  
+  .body-text {
+    margin-block: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .nav-wrapper {
+    visibility: visible;
+    position: static;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transform: translateX(100%);
+    min-width: auto;
+    min-height: auto;
+    background-color: var(--raisin-black-2);
+    color: var(--white);
+    padding-inline: 0;
+    transition: 0.25s var(--cubic-in);
+  }
+
+  .nav-header {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .btn-wrapper {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-block-end: 2rem;
+  }
+
+  .social-wrapper {
+    margin-block: 0;
+  }
+
+  .feature .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .card-icon ion-icon {
+    display: block;
+  } 
+
+  .feature hgroup {
+    margin-block-start: 0;
+  }
+
+  .feature-card .heading-2 {
+    font-size: 2.4rem;
+    margin-block-start: 0;
+  }
+
+  .feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .filter-btn {
+    font-size: 1.8rem;
+    padding: 2rem 2.5rem
+  }
+
+  .newsletter .container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .newsletter-content {
+    margin-inline-end: 10rem;
+  }
+
+  .newsletter-content input {
+    padding-block: 3rem;
+    padding-inline-start: 4rem;
+  }
+
+  .newsletter-content .btn {
+    margin: .8rem;
+  }
 
   .blog-list {
     grid-template-areas:
@@ -895,7 +1162,9 @@ footer p {
         'featured business'
         'featured figma';
     grid-auto-columns: 1fr;
+    column-gap: 8rem;
   }
+
   .featured {
     grid-area: featured;
   }
@@ -911,5 +1180,20 @@ footer p {
 
   .post-content {
     margin-top: 0;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+  }
+
+  .footer-down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-down p {
+    margin-bottom: 0;
   }
 }
