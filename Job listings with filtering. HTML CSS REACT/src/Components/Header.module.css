@@ -1,0 +1,6 @@
+.header {
+    background-image: url('../assets/images/bg-header-desktop.svg');
+    background-size: contain;
+    background-color: hsl(180, 29%, 50%);
+    min-height: 15.6rem;
+}

@@ -1,0 +1,12 @@
+.section {
+    max-width: 65vw;
+    margin-inline: auto;
+}
+
+.jobs_container {
+    margin-top: 10rem;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}

@@ -1,0 +1,121 @@
+.job_container {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 4rem 5rem;
+    justify-content: space-between;
+    grid-auto-rows: 1fr;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px hsla(180, 29%, 50%, 0.422);
+    position: relative;
+    overflow: hidden;
+}
+
+.job_container.featured::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+
+    height: 100%;
+    width: 5px;
+    background-color: hsl(180, 29%, 50%);
+}
+
+.job_heading {
+    display: flex;
+    align-items: center;
+}
+
+.job_company {
+    color: hsl(180, 29%, 50%);
+}
+
+.job_title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.job_title a:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+.job_main {
+    display: flex;
+    gap: 2rem;
+}
+
+.job_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem
+}
+
+.job_more {
+    margin-left: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.job_misc {
+    text-transform: uppercase;
+    color: white;
+    padding: .3em .7em;
+    border-radius: 10em;
+}
+
+.job_new {
+    background-color: hsl(180, 29%, 50%);
+}
+
+.job_featured {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.job_additionals {
+    display: flex;
+    column-gap: 3rem;
+    list-style: none;
+}
+
+.job_additional {
+    position: relative;
+}
+
+.job_additional:first-child::before {
+    display: none;
+}
+
+.job_additional::before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: hsl(180, 8%, 52%);
+    border-radius: 50%;
+    left: -20px;
+    bottom: 49%;
+}
+
+.job_tags {
+    display: flex;
+    column-gap: 2rem;
+    list-style-type: none;
+}
+
+.job_tag {
+    padding: .5em .7em;
+    border-radius: .3em;
+    font-weight: 700;
+    background-color: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    border: none;
+}
+
+.job_tag:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    cursor: pointer;
+}
