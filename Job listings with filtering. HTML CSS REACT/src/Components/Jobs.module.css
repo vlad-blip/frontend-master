@@ -1,12 +1,37 @@
 .section {
-    max-width: 65vw;
+    max-width: 70vw;
     margin-inline: auto;
+    padding-top: 6rem;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .section {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .section {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .section {
+        max-width: 90vw;
+    }
 }
 
 .jobs_container {
-    margin-top: 10rem;
     list-style-type: none;
     display: flex;
     gap: 2rem;
     flex-direction: column;
+}
+
+@media (max-width:375px) {
+    .jobs_container {
+        gap: 4rem;
+    }
 }

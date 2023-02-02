@@ -1,0 +1,63 @@
+.tags_container {
+    background-color: white;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    position: absolute;
+    top: -4rem;
+    min-width: 100%;
+    box-shadow: 0 10px 40px hsla(180, 29%, 50%, 0.422);
+}
+
+@media (max-width: 375px) {
+    .tags_container {
+        position: static;
+        transform: translateY(-4rem);
+    }
+
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.tag {
+    background-color: hsl(180, 31%, 95%);
+    padding-left: 1rem;
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    border-radius: 10%;
+}
+
+.tag button {
+    padding: .7rem 1rem;
+    border: 0;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    margin-left: 1rem;
+    color: white;
+    background-color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tag button:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.button {
+    background: 0;
+    border: 0;
+    font-weight: 700;
+    color: hsl(180, 14%, 20%);
+    cursor: pointer;
+}
+
+.button:hover {
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+}

@@ -9,18 +9,38 @@
     border-radius: 1rem;
     box-shadow: 0 10px 40px hsla(180, 29%, 50%, 0.422);
     position: relative;
-    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .job_container {
+        padding: 2rem;
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 .job_container.featured::before {
     content: '';
     display: block;
     position: absolute;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     left: 0;
 
     height: 100%;
     width: 5px;
     background-color: hsl(180, 29%, 50%);
+}
+
+.job_logo {
+    object-fit: contain;
+}
+
+@media (max-width:375px) {
+    .job_logo {
+        position: absolute;
+        top: -25px;
+        width: 50px;
+    }
 }
 
 .job_heading {
@@ -37,6 +57,12 @@
     text-decoration: none;
 }
 
+@media (max-width:375px) {
+    .job_title {
+        font-size: 1.8rem;
+    }
+}
+
 .job_title a:hover {
     color: hsl(180, 29%, 50%);
 }
@@ -49,12 +75,14 @@
 .job_info {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem
+    gap: 1.2rem;
+    padding-top: 1.5rem;
 }
 
 .job_more {
     margin-left: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -81,6 +109,7 @@
 
 .job_additional {
     position: relative;
+    color: hsl(180, 8%, 52%);
 }
 
 .job_additional:first-child::before {
@@ -101,8 +130,17 @@
 
 .job_tags {
     display: flex;
-    column-gap: 2rem;
+    gap: 2rem;
     list-style-type: none;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 375px) {
+    .job_tags {
+        border-top: 1px solid hsl(180, 8%, 52%);
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+    }
 }
 
 .job_tag {

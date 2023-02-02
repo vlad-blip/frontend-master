@@ -1,5 +1,6 @@
 import Header from "./Components/Header";
 import Jobs from "./Components/Jobs";
+import FilterContextProvider from "./store/FilterContextProvider";
 
 const DUMMY_DATA = [
   {
@@ -156,10 +157,10 @@ const DUMMY_DATA = [
 
 function App() {
   return (
-    <>
+    <FilterContextProvider>
       <Header />
       <Jobs jobs={DUMMY_DATA} />
-    </>
+    </FilterContextProvider>
   );
 }
 

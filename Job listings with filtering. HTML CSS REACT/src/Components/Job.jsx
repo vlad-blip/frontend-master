@@ -1,21 +1,7 @@
 import classes from "./Job.module.css";
 import ReactLogo from "../assets/images/shortly.svg";
-
-const DUMMY_JOB = {
-  id: 7,
-  company: "Shortly",
-  logo: "../assets/images/shortly.svg",
-  new: false,
-  featured: false,
-  position: "Junior Developer",
-  role: "Frontend",
-  level: "Junior",
-  postedAt: "2w ago",
-  contract: "Full Time",
-  location: "Worldwide",
-  languages: ["HTML", "JavaScript"],
-  tools: ["Sass"],
-};
+import { FilterContext } from "../store";
+import { useContext } from "react";
 
 const Job = ({
   company,
@@ -31,6 +17,12 @@ const Job = ({
   languages,
   tools,
 }) => {
+  const context = useContext(FilterContext);
+
+  const addFilterHandler = (event) => {
+    context.onAddFilters(event.target.value);
+  };
+
   const containerStyle = `
     ${classes.job_container} ${isFeatured ? classes.featured : ""}`;
   return (
@@ -58,7 +50,7 @@ const Job = ({
             </div>
 
             <h2 className={classes.job_title}>
-              <a href="">{position}</a>
+              <a href="/">{position}</a>
             </h2>
 
             <ul className={classes.job_additionals}>
@@ -70,19 +62,43 @@ const Job = ({
         </div>
         <ul className={classes.job_tags}>
           <li>
-            <button className={classes.job_tag}>{role}</button>
+            <button
+              className={classes.job_tag}
+              onClick={addFilterHandler}
+              value={role}
+            >
+              {role}
+            </button>
           </li>
           <li>
-            <button className={classes.job_tag}>{level}</button>
+            <button
+              className={classes.job_tag}
+              onClick={addFilterHandler}
+              value={level}
+            >
+              {level}
+            </button>
           </li>
           {languages.map((language) => (
             <li>
-              <button className={classes.job_tag}>{language}</button>
+              <button
+                className={classes.job_tag}
+                onClick={addFilterHandler}
+                value={language}
+              >
+                {language}
+              </button>
             </li>
           ))}
           {tools.map((tool) => (
             <li>
-              <button className={classes.job_tag}>{tool}</button>
+              <button
+                className={classes.job_tag}
+                onClick={addFilterHandler}
+                value={tool}
+              >
+                {tool}
+              </button>
             </li>
           ))}
         </ul>
