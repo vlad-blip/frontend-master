@@ -1,10 +1,10 @@
 import Header from "../components/Header";
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   return (
-    <>
-      <Header></Header>
+    <div className={className}>
+      <Header />
       {children}
-    </>
+    </div>
   );
 };
 

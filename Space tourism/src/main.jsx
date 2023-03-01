@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./Layout/Layout";
 import MainPage from "./pages/MainPage";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
@@ -11,36 +10,24 @@ import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <Layout>
-        <MainPage />
-      </Layout>
-    ),
+    path: "*",
+    element: <MainPage />,
+  },
+  {
+    path: "/Home",
+    element: <MainPage />,
   },
   {
     path: "/Destination/:planet",
-    element: (
-      <Layout>
-        <Destination />
-      </Layout>
-    ),
+    element: <Destination />,
   },
   {
-    path: "/Crew",
-    element: (
-      <Layout>
-        <Crew />
-      </Layout>
-    ),
+    path: "/Crew/:crewId",
+    element: <Crew />,
   },
   {
-    path: "/Technology",
-    element: (
-      <Layout>
-        <Technology />
-      </Layout>
-    ),
+    path: "/Technology/:technologyId",
+    element: <Technology />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

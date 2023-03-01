@@ -3,19 +3,23 @@ import { NavLink as RouterLink, useLocation } from "react-router-dom";
 
 const NavLink = ({ link, index }) => {
   const location = useLocation();
-  const url = `/${link}`;
+  const slices = location.pathname.split("/");
+
   const navClass =
-    location.pathname == url
-      ? `${styles.item_wrapper} ${styles.nav_active}`
-      : `${styles.item_wrapper}`;
+    slices[1] == link.name
+      ? `${styles["item-wrapper"]} ${styles["nav-active"]}`
+      : `${styles["item-wrapper"]}`;
 
   return (
     <div className={navClass}>
-      <RouterLink className={`${styles.nav_link} ${styles.nav_text}`} to={url}>
-        <span className={`${styles.highlight} ${styles.nav_highlight}`}>
+      <RouterLink
+        className={`${styles["nav-link"]} ${styles["nav-text"]}`}
+        to={link.url}
+      >
+        <span className={`${styles.highlight} ${styles["nav-highlight"]}`}>
           0{index}
         </span>
-        {link}
+        {link.name}
       </RouterLink>
     </div>
   );

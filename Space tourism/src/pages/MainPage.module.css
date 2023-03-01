@@ -1,3 +1,16 @@
+.wrapper {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+@media (max-width:768px) {
+    .wrapper {
+        background-image: url('../assets/home/background-home-tablet.jpg');
+    }
+}
+
 .btn_main {
     width: 274px;
     height: 274px;

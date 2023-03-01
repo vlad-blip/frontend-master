@@ -2,26 +2,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 5.5rem;
-    margin-top: 4rem;
+    padding-left: 5.5rem;
+    padding-top: 4rem;
 }
 
 @media (max-width:768px) {
     .header {
-        margin-top: 0;
-        margin-left: 4rem;
+        padding-top: 0;
+        padding-left: 4rem;
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:425px) {
     .header {
-        margin: 0;
-        margin-left: 2.4rem;
+        padding-left: 2.4rem;
         position: relative;
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:425px) {
     .logo {
         width: 40px;
         height: 40px;
@@ -45,13 +44,13 @@
     }
 }
 
-.nav_list {
+.nav-list {
     display: flex;
     gap: 4.8rem;
     list-style: none;
 }
 
-.nav_wrapper {
+.nav-wrapper {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40.7742px);
     padding-right: 16.5rem;
@@ -59,20 +58,20 @@
 }
 
 @media (max-width:768px) {
-    .nav_wrapper {
-        padding: 0 4.6rem;
+    .nav-wrapper {
+        padding: 0 4.8rem;
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:425px) {
     .nav {
         z-index: 1;
     }
 
-    .nav_wrapper {
+    .nav-wrapper {
         padding: 0;
         padding-top: 6.5rem;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         display: flex;
@@ -81,26 +80,52 @@
         min-height: 100vh;
         padding-left: 3.2rem;
 
-        display: none;
+        visibility: hidden;
+    }
+
+    .nav-wrapper--opened {
+        visibility: visible;
     }
 }
 
-@media (max-width:375px) {
-    .nav_list {
+@media (max-width:425px) {
+    .nav-list {
         flex-direction: column;
-        gap: 1.9rem;
+        gap: 3rem;
         width: 22.2rem;
         margin-top: 6.5rem;
     }
 }
 
-.nav_active {
+.nav-active {
     border-bottom: 3px solid hsla(0, 0%, 100%, 1);
 }
 
-@media (max-width:375px) {
-    .nav_active {
+@media (max-width:425px) {
+    .nav-active {
         border: none;
         border-right: 4px solid hsla(0, 0%, 100%, 1);
+    }
+}
+
+@media (max-width:425px) {
+    .burger-btn {
+        display: block;
+        position: relative;
+        z-index: 10;
+        width: 24px;
+        height: 21px;
+        margin-right: 2.7rem;
+        margin-top: 3.4rem;
+    }
+
+    .burger-icon {
+        width: 100%;
+        height: 100%;
+        background: url("../assets/shared/icon-hamburger.svg") no-repeat;
+    }
+
+    .burger-icon--close {
+        background: url('../assets/shared/icon-close.svg') no-repeat;
     }
 }

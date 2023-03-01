@@ -7,7 +7,6 @@ import Technology from "./pages/Technology";
 function App() {
   return (
     <div className="App">
-      <Header />
       <MainPage />
     </div>
   );
