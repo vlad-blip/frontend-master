@@ -1,0 +1,42 @@
+.wrapper {
+    background-image: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+@media (max-width:768px) {
+    .wrapper {
+        background-image: url('../assets/home/background-home-tablet.jpg');
+    }
+}
+
+.btn_main {
+    width: 274px;
+    height: 274px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    text-decoration: none;
+    color: var(--dark-blue);
+    border-radius: 50%;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Bellefair', sans-serif;
+    transition: box-shadow .5s;
+}
+
+@media (max-width:375px) {
+    .btn_main {
+        width: 150px;
+        height: 150px;
+        font-size: 2rem;
+        letter-spacing: 1.25px;
+    }
+}
+
+.btn_main:hover {
+    box-shadow: 0 0 0 80px hsla(0, 0%, 100%, .1);
+}
