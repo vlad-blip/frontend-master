@@ -49,7 +49,9 @@ const Crew = () => {
                   return (
                     <Link
                       key={index}
-                      className={`${styles.page} ${styles["page--active"]}`}
+                      className={`${styles.page} ${
+                        crewId === crew.name ? styles["page--active"] : ""
+                      }`}
                       to={`/Crew/${crew.name}`}
                     ></Link>
                   );

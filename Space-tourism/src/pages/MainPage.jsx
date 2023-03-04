@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const MainPage = () => {
   return (
     <Layout className={styles.wrapper}>
-      <main class="main">
-        <section class="hero">
-          <div class="section-text">
+      <main class={styles.main}>
+        <section class={styles.hero}>
+          <div class={styles["section-text"]}>
             <h5 class="heading-5">So, you want to travel to</h5>
             <h1 class="heading-1">Space</h1>
             <p class="body-text">

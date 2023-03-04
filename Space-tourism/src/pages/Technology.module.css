@@ -31,28 +31,6 @@
     }
 }
 
-@media (max-width:425px) {
-    .burger-btn {
-        display: block;
-        position: relative;
-        z-index: 10;
-        width: 24px;
-        height: 21px;
-        margin-right: 2.7rem;
-        margin-top: 3.4rem;
-    }
-
-    .burger-icon {
-        width: 100%;
-        height: 100%;
-        background: url("./assets/shared/icon-hamburger.svg") no-repeat;
-    }
-
-    .burger-icon--close {
-        background: url('./assets/shared/icon-close.svg') no-repeat;
-    }
-}
-
 .hero {
     display: block;
     color: var(--white);
@@ -133,19 +111,6 @@
 .heading-3 {
     white-space: nowrap;
 }
-
-.body-text {
-    margin-top: 1.7rem;
-    font-family: 'Barlow';
-    max-width: 44rem;
-}
-
-@media (max-width:425px) {
-    .body-text {
-        max-width: 32rem;
-    }
-}
-
 
 .slider {
     list-style: none;
@@ -232,6 +197,7 @@
     border: 1px solid rgba(255, 255, 255, .25);
     background-color: transparent;
     color: var(--white);
+    transition: background-color 500ms;
     text-decoration: none;
     font-size: 3.2rem;
 }

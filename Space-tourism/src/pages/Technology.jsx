@@ -77,7 +77,7 @@ const Technology = () => {
               />
               <img
                 srcSet={pictures.portrait}
-                alt="${name}"
+                alt={name}
                 className={`${styles["vehicle-img"]} ${styles.portrait}`}
               />
             </picture>
